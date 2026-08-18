@@ -34,7 +34,7 @@ AI-BUG-DETECTION/
 
 ## Quick Start Setup
 
-### Step 1: Configure the Backend
+### Step 1: Clone and Configure Environment
 
 1. Navigate to the backend directory and create a virtual environment:
    ```bash
@@ -60,11 +60,13 @@ AI-BUG-DETECTION/
 
 ### Step 2: Start the Frontend Interface
 
+The frontend is a Python Streamlit app that connects directly to the backend services.
+
 1. Navigate to the frontend directory:
    ```bash
    cd ../frontend
    ```
-2. Install frontend specific dependencies inside the activated environment:
+2. Install frontend specific dependencies (Plotly, etc.) inside the activated environment:
    ```bash
    pip install -r requirements.txt --trusted-host pypi.org --trusted-host files.pythonhosted.org --trusted-host pypi.python.org
    ```
