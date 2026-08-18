@@ -3,11 +3,16 @@ from typing import Dict, Any
 
 class BugClassifier:
     """
-    Classifies bugs into categories:
-    - Syntax Error, Logic Error, Runtime Error, Security Vulnerability, 
-      Performance Issue, Input Validation Issue, Exception Handling Issue, 
-      API Misuse, Code Smell
+    Classifies and normalizes bugs into standard categories.
     """
     def classify(self, bug_details: Dict[str, Any]) -> str:
-        # TODO: Refine or double check bug classification
-        return bug_details.get("type", "Logic Error")
+        valid_types = [
+            "Syntax Error", "Logic Error", "Runtime Error", "Security Vulnerability",
+            "Performance Issue", "Input Validation Issue", "Exception Handling Issue",
+            "API Misuse", "Code Smell"
+        ]
+        bug_type = bug_details.get("type", "Logic Error").strip()
+        for t in valid_types:
+            if t.lower() == bug_type.lower():
+                return t
+        return "Logic Error"

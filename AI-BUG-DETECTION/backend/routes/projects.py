@@ -1,15 +1,18 @@
 # Ownership: Pavan (API + Static Analysis + Database)
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends
+from sqlalchemy.orm import Session
 from typing import List
+from database.database import get_db
+from models.project import Project
 from schemas.analysis import ProjectResponse
 
 router = APIRouter()
 
 @router.get("/projects", response_model=List[ProjectResponse])
-def get_projects():
+def get_projects(db: Session = Depends(get_db)):
     """
     GET /api/projects
-    Return project information.
+    Return list of all registered projects from SQLite.
     """
-    # TODO: Fetch list of projects from database
-    raise HTTPException(status_code=501, detail="Not Implemented")
+    projects = db.query(Project).all()
+    return projects

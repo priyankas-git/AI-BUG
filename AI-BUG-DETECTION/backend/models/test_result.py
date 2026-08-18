@@ -5,6 +5,7 @@ from models import Base
 
 class TestResult(Base):
     __tablename__ = "test_results"
+    __test__ = False
 
     id = Column(String, primary_key=True, index=True)
     bug_id = Column(String, ForeignKey("bugs.id"))
