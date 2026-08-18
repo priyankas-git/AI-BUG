@@ -1,0 +1,13 @@
+# Ownership: Pavan (API + Static Analysis + Database)
+import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
+    handlers=[
+        logging.StreamHandler()
+    ]
+)
+
+def get_logger(name: str):
+    return logging.getLogger(name)

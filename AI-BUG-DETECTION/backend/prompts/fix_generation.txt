@@ -1,0 +1,15 @@
+Generate an optimized fix for the bug on line {line} in this {language} code:
+```
+{code}
+```
+
+Bug details:
+- Type: {bug_type}
+- Description: {description}
+
+Provide the corrected code ensuring you preserve original intent.
+Return structured JSON only:
+{{
+  "fixed_code": "entire corrected source code",
+  "explanation": "how the fix addresses the issue"
+}}

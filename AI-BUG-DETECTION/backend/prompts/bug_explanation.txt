@@ -1,0 +1,11 @@
+Provide a detailed explanation for the following bug in {language}:
+Type: {bug_type}
+Line: {line}
+Description: {description}
+
+Explain the root cause and why it happens in this specific context.
+Return structured JSON only:
+{{
+  "explanation": "detailed explanation...",
+  "impact": "severity of impact on runtime/security..."
+}}
